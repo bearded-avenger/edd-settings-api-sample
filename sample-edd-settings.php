@@ -10,6 +10,7 @@ class sampleEDDOpts {
 
 	/* EDD Settings API has built in callbacks for option types and sanitization
 	*
+	* edd_header_callback  - creates separation headings
 	* edd_checkbox_callback
 	* edd_multicheck_callback
 	* edd_radio_callback
