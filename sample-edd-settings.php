@@ -33,34 +33,48 @@ class sampleEDDOpts {
 	*
 	*/
 
+	/*
+	*  Retrieve options like this
+	*
+	*  $opts = get_option('edd_options');
+	*  echo $opts['test'];
+	*  echo $opts['another']
+	*
+	*/
+
 	function test_tab( $tabs ) {
 
-	    $tabs['wow'] = 'EDD Galleries Pro';
+		$ns = 'uniquetoyourshit';
+
+	    $tabs[$ns] = 'Balls Awesome';
+
 	    return $tabs;
 	}
+
 	function edd_register_settings_test() {
 
-		//$opts = get_option('edd_settings');
-		//var_dump($opts['test']);
+		$ns = 'uniquetoyourshit';
 
 	    add_settings_section(
-	        'edd_settings_wow', // edd_settings_XXX - xxx is the tab name
+	        'edd_settings_'.$ns, // edd_settings_XXX - xxx is the tab name
 	        __return_null(),
 	        '__return_false',
-	        'edd_settings_wow' // edd_settings_XXX - xxx is the tab name
+	        'edd_settings_'.$ns // edd_settings_XXX - xxx is the tab name
 	    );
+
+	    // location
 
 	    add_settings_field(
 	        'edd_settings[test]', // "test" should be unique to this specific option
 	        'Wow Option Name',   // NAME of the option
 	        'edd_text_callback', // built in callbacks see https://github.com/easydigitaldownloads/Easy-Digital-Downloads/blob/master/includes/admin/settings/register-settings.php for a full list
-	        'edd_settings_wow', // edd_settings_XXX - xxx is the tab name
-	        'edd_settings_wow', // edd_settings_XXX - xxx is the tab name
+	        'edd_settings_'.$ns, // edd_settings_XXX - xxx is the tab name
+	        'edd_settings_'.$ns, // edd_settings_XXX - xxx is the tab name
 	        array(
 	            'id'      => 'test', // should match the id in teh serialized optoin array
 	            'desc'    => 'First Desc',
 	            'name'    => 'Wow Option Name',  // NAME of the option
-	            'section' => 'wow' // "test" should be unique to this specific option
+	            'section' => $ns // "test" should be unique to this specific option
 	        )
 	    );
 
@@ -69,13 +83,13 @@ class sampleEDDOpts {
 	        'edd_settings[another]',
 	        'So cool',
 	        'edd_text_callback',
-	        'edd_settings_wow',
-	        'edd_settings_wow',
+	        'edd_settings_'.$ns,
+	        'edd_settings_'.$ns,
 	        array(
 	            'id'      => 'another',
 	            'desc'    => 'First Desc',
 	            'name'    => 'Another Sweet',
-	            'section' => 'wow'
+	            'section' => $ns
 	        )
 	    );
 
