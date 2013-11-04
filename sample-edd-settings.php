@@ -1,6 +1,6 @@
 <?php
 
-class baEDDGalleriesProOpts {
+class sampleEDDOpts {
 
 	function __construct() {
 
@@ -82,4 +82,4 @@ class baEDDGalleriesProOpts {
 	}
 
 }
-new baEDDGalleriesProOpts;
+new sampleEDDOpts;
