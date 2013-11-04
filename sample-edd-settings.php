@@ -36,7 +36,7 @@ class sampleEDDOpts {
 	/*
 	*  Retrieve options like this
 	*
-	*  $opts = get_option('edd_options');
+	*  $opts = get_option('edd_settings');
 	*  echo $opts['test'];
 	*  echo $opts['another']
 	*
