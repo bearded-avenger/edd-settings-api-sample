@@ -40,6 +40,7 @@ class sampleEDDOpts {
 	*  global $edd_options;
 	*  echo $edd_options['test'];
 	*  echo $edd_options['another']
+	* 	as of EDD 1.8.4 we now have    edd_get_option( $key = '', $default = false )
 	*
 	*/
 
